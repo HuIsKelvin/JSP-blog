@@ -5,7 +5,7 @@
 <html>
 <head>
 
-	<%@ include file="/src/common/importTop.jsp" %>
+	<%@include file="/src/common/importTop.jsp" %>
 
 </head>
 <body>
@@ -15,18 +15,15 @@
 
 	<!-- 页面内容 -->
 	<div class="page-container">
-		<h1>blog list</h1>
-		<% 
-			bloglist.setMsg("this mag");
-			String msg = bloglist.getMsg();
-		%>
-		<%= msg %>
+		<div class="container">
+			about page
+		</div>
 	</div>
 	
 	<!-- footer -->
 	<%@ include file="/src/common/myFooter.jsp" %>
 	
-	<%@ include file="/src/common/importBottom.jsp" %>
+	<%@include file="/src/common/importBottom.jsp" %>
 	 
 </body>
 </html>

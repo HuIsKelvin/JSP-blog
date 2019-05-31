@@ -1,7 +1,8 @@
-package mybean.blog;
+package mybean.article;
 
-public class BlogList {
+public class ArticleList {
 	String msg;
+	Article[] articleList;
 
 	public String getMsg() {
 		return msg;

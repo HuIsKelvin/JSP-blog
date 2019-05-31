@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
-<title>Index Page</title>
+<title>Kelvin's blog</title>
 </head>
 <body>
-<jsp:forward page="./src/pages/blogList.jsp"></jsp:forward>
+	<jsp:forward page="./src/pages/home.jsp"></jsp:forward>
 </body>
 </html>
