@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="bloglist" class="mybean.article.BlogList" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +15,7 @@
 	<!-- 页面内容 -->
 	<div class="page-container">
 		<div class="container">
-			home page
+			<h1>page model</h1>
 		</div>
 	</div>
 	

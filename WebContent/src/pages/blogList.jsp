@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="bloglist" class="mybean.article.BlogList" scope="session"></jsp:useBean>
+<jsp:useBean id="articleList" class="mybean.article.ArticleList" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +16,7 @@
 	<!-- 页面内容 -->
 	<div class="page-container">
 		<h1>blog list</h1>
-		<% 
-			bloglist.setMsg("this mag");
-			String msg = bloglist.getMsg();
-		%>
-		<%= msg %>
+
 	</div>
 	
 	<!-- footer -->

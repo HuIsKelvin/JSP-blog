@@ -1,14 +1,15 @@
 package mybean.article;
 
+import java.util.Vector;
+
 public class ArticleList {
-	String msg;
-	Article[] articleList;
+	Vector<Article> articleList;
 
-	public String getMsg() {
-		return msg;
+	public ArticleList() {
+		super();
 	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public ArticleList(Vector<Article> articleList) {
+		super();
+		this.articleList = articleList;
 	}
 }
