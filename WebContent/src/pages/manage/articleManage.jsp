@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="authorInfo" class="mybean.author.AuthorInfo" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +10,12 @@
 <body>
 
 	<!-- 导航栏 navigator -->
-	<%@ include file="/src/common/myNav.jsp" %>
+	<%@include file="/src/common/myNav.jsp" %>
 
 	<!-- 页面内容 -->
 	<div class="page-container">
 		<div class="container">
-			<h1>about page</h1>
-			<div>
-				<%= authorInfo.getName() %>
-			</div>
-			<div>
-				<%= authorInfo.getEmail() %>
-			</div>
+			<h1>blog manage</h1>
 		</div>
 	</div>
 	

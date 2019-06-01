@@ -23,7 +23,8 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right custom-menu">
 					<li class="active"><a href="/BlogSystem/src/pages/home.jsp">Home</a></li>
-					<li><a href="/BlogSystem/src/pages/about.jsp">About</a></li>
+					<!-- <li><a href="/BlogSystem/src/pages/about.jsp">About</a></li> -->
+					<li><a href="/BlogSystem/about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 					<li><a href="/BlogSystem/src/pages/blogList.jsp">Blog</a></li>
 				</ul>

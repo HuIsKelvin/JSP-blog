@@ -9,12 +9,20 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>  
-    <servlet-name>postman</servlet-name>  
-    <servlet-class>myservlet.control.PostMan</servlet-class>  
-  </servlet>  
-  <servlet-mapping>  
+  <servlet>
+    <servlet-name>postman</servlet-name>
+    <servlet-class>myservlet.control.PostMan</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>postman</servlet-name>
     <url-pattern>/postman</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>toAboutPage</servlet-name>
+    <servlet-class>myservlet.action.ToAboutPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>toAboutPage</servlet-name>
+    <url-pattern>/about</url-pattern>
   </servlet-mapping>
 </web-app>

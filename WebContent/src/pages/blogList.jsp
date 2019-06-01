@@ -11,7 +11,7 @@
 <body>
 
 	<!-- 导航栏 navigator -->
-	<%@include file="/src/common/myNav.jsp" %>
+	<%@ include file="/src/common/myNav.jsp" %>
 
 	<!-- 页面内容 -->
 	<div class="page-container">

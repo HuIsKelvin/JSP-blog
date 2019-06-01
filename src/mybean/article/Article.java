@@ -12,7 +12,7 @@ package mybean.article;
  */
 
 public class Article {
-	private int aid;
+	private int id;
 	private String title;
 	private String date;
 	private String author;
@@ -20,18 +20,18 @@ public class Article {
 	private String content;
 	
 	public Article() {
-		this.aid = 0;
+		this.id = 0;
 		this.title = "";
 		this.date = "";
 		this.author = "Kelvin";
 		this.category = "";
 		this.content = "";
 	}
-	public int getAid() {
-		return aid;
+	public int getId() {
+		return id;
 	}
-	public void setAid(int aid) {
-		this.aid = aid;
+	public void setId(int aid) {
+		this.id = aid;
 	}
 	public String getTitle() {
 		return title;
