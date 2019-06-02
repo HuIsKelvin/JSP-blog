@@ -34,13 +34,14 @@ public class showHotArticleList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		try {
-			String sqlString = "select article_id id, article_title title, article_date date from articles ORDER BY date DESC LIMIT 5;";
+			String sqlString = "select article_id id, article_title title, article_date date , article_description description from articles ORDER BY date DESC LIMIT 5;";
 			ResultSet resultSet = (new MysqlQuery()).executeSql(sqlString);
 			HotArticleList hotArticleList = new HotArticleList();
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
 				String title = resultSet.getString("title");
 				Article article = new Article(id, title);
+				article.setDescription(resultSet.getString("description"));
 				hotArticleList.add(article);
 			}
 			System.out.println("num of recent blog: " + hotArticleList.getArticleNum());

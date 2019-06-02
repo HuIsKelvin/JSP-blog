@@ -48,9 +48,17 @@
 			                    <p>
 			                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>
 			                        <span class="comments-padding"></span>
-			                        <% if(article.getCategory() != null && article.getCategory().length() >0 ) { %> <i class="fa fa-comment"></i> <%= article.getCategory() %> <% } %>
+			                        <% if(article.getAuthor() != null && article.getAuthor().length() > 0 ) { %> <i class="fa fa-user"></i> <%= article.getAuthor() %> <% } %>
+			                        <span class="comments-padding"></span>
+			                        <% if(article.getCategory() != null && article.getCategory().length() > 0 ) { %> <i class="fa fa-tag"></i> <%= article.getCategory() %> <% } %>
 			                    </p>
-			                    <p><%= article.getDescription() %></p>
+			                    <%
+			                    	if(article.getDescription() != null && article.getDescription().length() > 0) {
+			                    %>
+			                    	<p><%= article.getDescription() %></p>
+			                    <% 
+			                    	} 
+		                    	%>
 			                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
 			                </div>
 			            </div>

@@ -29,6 +29,15 @@
 	                </a>
 	                <div class="media-body">
 	                    <h4 class="media-heading"><a href="#"><%= article.getTitle() %></a></h4>
+	                    <%
+	                    	if(article.getDescription() != null && article.getDescription().length() > 0) {
+	                    %>
+	                    	<p><%= article.getDescription() %></p>
+	                    <%
+	                    	} else {
+	                    %>
+	                    	<p>This is description of article.This is description of article.</p>
+	                    <%	} %>
 	                </div>
 	            </div>
            	<%
