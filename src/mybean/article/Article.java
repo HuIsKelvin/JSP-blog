@@ -16,12 +16,21 @@ public class Article {
 	private String title;
 	private String date;
 	private String author;
+	private String description;
 	private String category;
 	private String content;
 	
 	public Article() {
 		this.id = 0;
 		this.title = "";
+		this.date = "";
+		this.author = "Kelvin";
+		this.category = "";
+		this.content = "";
+	}
+	public Article(int id, String title) {
+		this.id = id;
+		this.title = title;
 		this.date = "";
 		this.author = "Kelvin";
 		this.category = "";
@@ -62,5 +71,11 @@ public class Article {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

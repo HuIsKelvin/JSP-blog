@@ -4,7 +4,28 @@
 	box-sizing: border-box;
 }
 
+iframe {
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.iframe-container {
+	
+}
+
 .page-container {
-	margin-top: 80px;
+	margin-top: 20px;
 	min-height: 200px;
+}
+
+iframe[id="ifm-hot-article"] {
+	height: 630px;
+}
+
+#hot-article-list {
+	width: 100%;
+}
+#hot-article-list .media img {
+	width: 100%;
 }

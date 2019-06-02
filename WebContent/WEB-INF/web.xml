@@ -18,11 +18,27 @@
     <url-pattern>/postman</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>toBlogListPage</servlet-name>
+    <servlet-class>myservlet.action.ToBlogListPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>toBlogListPage</servlet-name>
+    <url-pattern>/blogList</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>toAboutPage</servlet-name>
     <servlet-class>myservlet.action.ToAboutPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>toAboutPage</servlet-name>
     <url-pattern>/about</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>showHotArticleList</servlet-name>
+    <servlet-class>myservlet.action.showHotArticleList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showHotArticleList</servlet-name>
+    <url-pattern>/showHotArticle</url-pattern>
   </servlet-mapping>
 </web-app>

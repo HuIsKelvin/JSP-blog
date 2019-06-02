@@ -5,13 +5,13 @@
 <html>
 <head>
 
-	<%@include file="/src/common/importTop.jsp" %>
+	<%@include file="/src/components/importTop.jsp" %>
 
 </head>
 <body>
 
 	<!-- 导航栏 navigator -->
-	<%@include file="/src/common/myNav.jsp" %>
+	<%@include file="/src/components/myNav.jsp" %>
 
 	<!-- 页面内容 -->
 	<div class="page-container">
@@ -21,9 +21,9 @@
 	</div>
 	
 	<!-- footer -->
-	<%@ include file="/src/common/myFooter.jsp" %>
+	<%@ include file="/src/components/myFooter.jsp" %>
 	
-	<%@include file="/src/common/importBottom.jsp" %>
+	<%@include file="/src/components/importBottom.jsp" %>
 	 
 </body>
 </html>

@@ -1,11 +1,11 @@
 package myservlet.action;
 
+import myUtil.connector.*;
+import mybean.article.*;
+
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import myUtil.connector.*;
-import mybean.author.AuthorInfo;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GetAuthorInfo
+ * Servlet implementation class showHotArticleList
  */
-@WebServlet("/GetAuthorInfo")
-public class ToAboutPage extends HttpServlet {
+@WebServlet("/showHotArticleList")
+public class showHotArticleList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ToAboutPage() {
+    public showHotArticleList() {
         super();
     }
 
@@ -32,29 +32,25 @@ public class ToAboutPage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AuthorInfo aInfo = new AuthorInfo();
-		/*
-		 * try { Class.forName("com.mysql.cj.jdbc.Driver"); } catch(Exception e) {
-		 * System.out.print(e); }
-		 */
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		try {
-			String sqlString = "select * from author_info;";
+			String sqlString = "select article_id id, article_title title, article_date date from articles ORDER BY date DESC LIMIT 5;";
 			ResultSet resultSet = (new MysqlQuery()).executeSql(sqlString);
-			// 读取数据
-			while(resultSet.next()) {
-				aInfo.setId(resultSet.getInt("author_id"));
-				aInfo.setName(resultSet.getString("author_name"));
-				aInfo.setEmail(resultSet.getString("author_email"));
+			HotArticleList hotArticleList = new HotArticleList();
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String title = resultSet.getString("title");
+				Article article = new Article(id, title);
+				hotArticleList.add(article);
 			}
-			
-			// 将 author info 存在 session 中
-		    request.getSession().setAttribute("authorInfo", aInfo);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/pages/about.jsp");
+			System.out.println("num of recent blog: " + hotArticleList.getArticleNum());
+			// 将 hot article list 存在 session 中
+		    request.getSession().setAttribute("hotArticleList", hotArticleList);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/components/hotArticleList.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// doPost(request, response);
 	}
 
 	/**
