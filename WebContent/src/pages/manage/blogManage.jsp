@@ -10,7 +10,7 @@
 <html>
 <head>
 
-	<%@ include file="/src/components/importTop.jsp" %>
+	<%@include file="/src/components/importTop.jsp" %>
 
 </head>
 <body>
@@ -20,11 +20,9 @@
 
 	<!-- 页面内容 -->
 	<div class="page-container">
-		<!-- Page Content -->
+		<!-- page content -->
 		<section class="container blog">
 			<div class="row">
-		        <!-- Blog Column -->
-		        <div class="col-md-8">
 		            <h1 class="page-header sidebar-title">
 		            	<!-- page title -->
 		                <%= pageTitle %>
@@ -39,16 +37,16 @@
 		            	<!-- single blog -->
 		            	<hr>
 			            <div class="row single-blog">
-			                <div class="col-sm-4 col-md-4 ">
+			              <!--   <div class="col-sm-4 col-md-4 ">
 			                    <div class="blog-thumb">
-			                        <a href="/BlogSystem/blogShow?aid=<%=article.getId() %>">
+			                        <a href="#">
 			                            <img class="img-responsive" src="/BlogSystem/src/assets/images/blog-photo1.jpg" alt="photo">
 			                        </a>
 			                    </div>
-			                </div>
+			                </div> -->
 			                <div class="col-sm-8 col-md-8">
 			                    <h2 class="blog-title">
-			                        <a href="/BlogSystem/blogShow?aid=<%=article.getId() %>"><%= article.getTitle() %></a>
+			                        <a href="#"><%= article.getTitle() %></a>
 			                    </h2>
 			                    <p>
 			                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>
@@ -66,38 +64,16 @@
 		                    	%>
 			                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
 			                </div>
+			                <div class="col-sm-4 col-md-4 ">
+			                    <div class="operator pull-right">
+			                    <a href="#" class="btn"><i class="fa fa-trash"></i> 删除</a>
+			                    <a href="#" class="btn"><i class="fa fa-pencil"></i> 修改</a>
+			                    </div>
+			                </div>
 			            </div>
 		            <%
 		            	}
 		            %>
-					<!-- ----------- -->
-					
-		            <hr>
-		           <!--  <div class="text-center"> 
-		                <ul class="pagination"> 
-		                    <li class="active"> <a href="#">1</a> </li> 
-		                    <li> <a href="#">2</a> </li> 
-		                    <li> <a href="#">3</a> </li> 
-		                    <li> <a href="#">4</a> </li> 
-		                    <li> <a href="#">5</a> </li> 
-		                    <li> <a href="#">Next</a> </li> 
-		                </ul> 
-		            </div> -->
-		        </div>
-		        
-		        <!-- side bar -->
-				<div class="col-md-4 sidebar-padding">
-				
-					<div class="blog-sidebar">
-						<!-- search bar -->
-						<%@include file="/src/components/searchBar.jsp" %>
-					</div>
-					
-					<!-- recent article list -->
-					<div class="iframe-container">
-						<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
-					</div>
-				</div>
 			</div>
 		</section>
 	</div>
@@ -105,6 +81,7 @@
 	<!-- footer -->
 	<%@ include file="/src/components/myFooter.jsp" %>
 	
-	<%@ include file="/src/components/importBottom.jsp" %>
+	<%@include file="/src/components/importBottom.jsp" %>
+	 
 </body>
 </html>

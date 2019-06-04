@@ -18,22 +18,30 @@
     <url-pattern>/postman</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>toBlogShowPage</servlet-name>
+    <servlet-name>toBlogShow</servlet-name>
     <servlet-class>myservlet.action.ToBlogShowPage</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>toBlogShowPage</servlet-name>
+    <servlet-name>toBlogShow</servlet-name>
     <url-pattern>/blogShow</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>toBlogListPage</servlet-name>
+    <servlet-name>toBlogList</servlet-name>
     <servlet-class>myservlet.action.ToBlogListPage</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>toBlogListPage</servlet-name>
+    <servlet-name>toBlogList</servlet-name>
     <url-pattern>/blogList</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
+  	<servlet-name>toBlogMange</servlet-name>
+  	<servlet-class>myservlet.action.ToBlogMangePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>toBlogMange</servlet-name>
+  	<url-pattern>/blogManage</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>searchBlog</servlet-name>
     <servlet-class>myservlet.action.SearchBlog</servlet-class>
   </servlet>
@@ -56,5 +64,21 @@
   <servlet-mapping>
     <servlet-name>showHotArticleList</servlet-name>
     <url-pattern>/showHotArticle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>signIn</servlet-name>
+    <servlet-class>myservlet.sign.SignIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signIn</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>signOut</servlet-name>
+    <servlet-class>myservlet.sign.SignOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signOut</servlet-name>
+    <url-pattern>/signout</url-pattern>
   </servlet-mapping>
 </web-app>

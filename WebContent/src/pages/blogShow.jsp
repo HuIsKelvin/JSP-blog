@@ -12,7 +12,7 @@
 <body>
 
 	<!-- 导航栏 navigator -->
-	<%@include file="/src/components/myNav.jsp" %>
+	<jsp:include page="/src/components/myNav.jsp" flush="true"/>
 
 	<!-- 页面内容 -->
 	<div class="page-container">
@@ -32,7 +32,7 @@
 									 <!-- blog author -->
 									 <span><% if(article.getAuthor() != null && article.getAuthor().length() > 0 ) { %> <i class="fa fa-user"></i> Posted by <a href="#"><%= article.getAuthor() %></a> <% } %> </span>
 									 <!-- blog category -->
-									 </span><% if(article.getCategory() != null && article.getCategory().length() > 0 ) { %> <i class="fa fa-tag"></i> <a href="#" rel="tag"><%= article.getCategory() %></a> <% } %> </span>
+									 <span><% if(article.getCategory() != null && article.getCategory().length() > 0 ) { %> <i class="fa fa-tag"></i> <a href="#" rel="tag"><%= article.getCategory() %></a> <% } %> </span>
 									 <!-- <div class="pull-right"><span><i class="fa fa-eye"></i> 184</span> <span><i class="fa fa-comment"></i> 4</span></div> -->
 								</div>
 							</div>
@@ -61,19 +61,6 @@
 						<div class="blog-sidebar">
 							<!-- search bar -->
 							<%@include file="/src/components/searchBar.jsp" %>
-						</div>
-						
-						<!-- Blog Categories -->
-						<div class="blog-sidebar">
-							<h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
-							<hr>
-							<ul class="sidebar-list">
-								<li><a href="#">Applications</a></li>
-								<li><a href="#">Photography</a></li>
-								<li><a href="#">Art Design</a></li>
-								<li><a href="#">Graphic Design</a></li>
-								<li><a href="#">Category Name</a></li>
-							</ul>
 						</div>
 						
 						<!-- Recent Posts -->

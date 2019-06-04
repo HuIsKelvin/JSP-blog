@@ -31,3 +31,17 @@ iframe[id="ifm-hot-article"] {
 #hot-article-list .media img {
 	width: 100%;
 }
+
+/* sign in */
+.sign-form {
+	height: 60vh;
+	margin: 50px auto;
+}
+
+.sign-form form {
+	margin: 0 auto;
+}
+
+.sign-form form .alert-msg {
+	color: red;
+}

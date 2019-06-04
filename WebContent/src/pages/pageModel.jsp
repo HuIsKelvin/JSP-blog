@@ -10,7 +10,7 @@
 <body>
 
 	<!-- 导航栏 navigator -->
-	<%@include file="/src/components/myNav.jsp" %>
+	<jsp:include page="/src/components/myNav.jsp" flush="true"/>
 
 	<!-- 页面内容 -->
 	<div class="page-container">
