@@ -4,19 +4,21 @@
 	box-sizing: border-box;
 }
 
+/* 
+ * page contatiner
+ */
+.page-container {
+	margin-top: 20px;
+	min-height: 200px;
+}
+
+/* 
+ * iframe sytle
+ */
 iframe {
 	border: 0;
 	width: 100%;
 	height: 100%;
-}
-
-.iframe-container {
-	
-}
-
-.page-container {
-	margin-top: 20px;
-	min-height: 200px;
 }
 
 iframe[id="ifm-hot-article"] {

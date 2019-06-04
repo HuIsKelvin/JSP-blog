@@ -2,6 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="articleList" class="mybean.article.ArticleList" scope="session"></jsp:useBean>
+<% 
+	String pageTitle = (String)session.getAttribute("pageTitle"); 
+	if(pageTitle == null || pageTitle.length() == 0) { pageTitle = "我的博客"; }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +26,8 @@
 		        <!-- Blog Column -->
 		        <div class="col-md-8">
 		            <h1 class="page-header sidebar-title">
-		                My blogs
+		            	<!-- page title -->
+		                <%= pageTitle %>
 		            </h1>
 		            
 		            <!-- Blog List -->
@@ -43,7 +48,7 @@
 			                </div>
 			                <div class="col-sm-8 col-md-8">
 			                    <h2 class="blog-title">
-			                        <a href="#"><%= article.getTitle() %></a>
+			                        <a href="/BlogSystem/blogShow?aid=<%=article.getId() %>"><%= article.getTitle() %></a>
 			                    </h2>
 			                    <p>
 			                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>
@@ -68,7 +73,7 @@
 					<!-- ----------- -->
 					
 		            <hr>
-		            <div class="text-center"> 
+		           <!--  <div class="text-center"> 
 		                <ul class="pagination"> 
 		                    <li class="active"> <a href="#">1</a> </li> 
 		                    <li> <a href="#">2</a> </li> 
@@ -77,12 +82,18 @@
 		                    <li> <a href="#">5</a> </li> 
 		                    <li> <a href="#">Next</a> </li> 
 		                </ul> 
-		            </div>
+		            </div> -->
 		        </div>
 		        
 		        <!-- side bar -->
 				<div class="col-md-4 sidebar-padding">
-					<!-- hot article list -->
+				
+					<div class="blog-sidebar">
+						<!-- search bar -->
+						<%@include file="/src/components/searchBar.jsp" %>
+					</div>
+					
+					<!-- recent article list -->
 					<div class="iframe-container">
 						<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
 					</div>

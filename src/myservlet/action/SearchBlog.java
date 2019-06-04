@@ -1,8 +1,5 @@
 package myservlet.action;
 
-import myUtil.connector.*;
-import mybean.article.*;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,17 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import myUtil.connector.MysqlQuery;
+import mybean.article.Article;
+import mybean.article.ArticleList;
+
 /**
- * Servlet implementation class ToBlogListPage
+ * Servlet implementation class SearchBlog
  */
-@WebServlet("/ToBlogListPage")
-public class ToBlogListPage extends HttpServlet {
+@WebServlet("/SearchBlog")
+public class SearchBlog extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ToBlogListPage() {
+    public SearchBlog() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,7 +42,9 @@ public class ToBlogListPage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			String sqlString = "select * from articles where article_ifShow=1 ORDER BY article_date DESC";
+			String query = request.getParameter("query");
+			System.out.println("get query: " + query);
+			String sqlString = "select * from articles where article_ifShow=1 AND (article_title LIKE '%" + query + "%' OR article_category LIKE '%" + query + "%');";
 			ResultSet resultSet = (new MysqlQuery()).executeSql(sqlString);
 			ArticleList articleList = new ArticleList();
 			while (resultSet.next()) {
@@ -57,7 +60,7 @@ public class ToBlogListPage extends HttpServlet {
 			}
 			// 将 hot article list 存在 session 中
 		    request.getSession().setAttribute("articleList", articleList);
-		    request.getSession().setAttribute("pageTitle", "我的博客");
+		    request.getSession().setAttribute("pageTitle", "检索结果");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/pages/blogList.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {

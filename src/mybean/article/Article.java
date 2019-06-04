@@ -24,7 +24,7 @@ public class Article {
 		this.id = 0;
 		this.title = "";
 		this.date = "";
-		this.author = "Kelvin";
+		this.author = "";
 		this.category = "";
 		this.content = "";
 	}
@@ -37,13 +37,13 @@ public class Article {
 		this.content = "";
 	}
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public void setId(int aid) {
 		this.id = aid;
 	}
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
@@ -55,25 +55,25 @@ public class Article {
 		this.date = date;
 	}
 	public String getAuthor() {
-		return author;
+		return this.author;
 	}
 	public void setAuthor(String author) {
 		this.author = author;
 	}
 	public String getCategory() {
-		return category;
+		return this.category;
 	}
 	public void setCategory(String category) {
 		this.category = category;
 	}
 	public String getContent() {
-		return content;
+		return this.content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
