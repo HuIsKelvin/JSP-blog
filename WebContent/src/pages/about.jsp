@@ -15,13 +15,39 @@
 
 	<!-- 页面内容 -->
 	<div class="page-container">
-		<div class="container">
-			<h1>about page</h1>
-			<div>
-				<%= authorInfo.getName() %>
-			</div>
-			<div>
-				<%= authorInfo.getEmail() %>
+		<div class="container blog">
+			<div id="about-page">
+				<div class="row">
+		        	<!-- Blog Column -->
+		        	<div class="col-md-8">
+						<h1 class="page-header sidebar-title">
+			            	<!-- page title -->
+			                about me
+			            </h1>
+						<div class="detail-item">
+							<h2 class="blog-title author-name">
+								<a href="#"><%= authorInfo.getName() %></a>
+							</h2>
+						</div>
+						<p><i class="fa fa-star"></i> <%= authorInfo.getMotto() %></p>
+						<p><i class="fa fa-envelope"></i> <%= authorInfo.getEmail() %></p>
+						<p><i class="fa fa-github"></i> <a href="<%= authorInfo.getGithub() %>"><%= authorInfo.getGithub() %></a></p>
+					</div>
+					
+			        <!-- side bar -->
+					<div class="col-md-4 sidebar-padding">
+						<div class="blog-sidebar">
+							<!-- search bar -->
+							<%@include file="/src/components/searchBar.jsp" %>
+						</div>
+						
+						<!-- recent article list -->
+						<div class="iframe-container">
+							<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 	</div>

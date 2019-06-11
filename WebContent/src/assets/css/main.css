@@ -22,7 +22,7 @@ iframe {
 }
 
 iframe[id="ifm-hot-article"] {
-	height: 630px;
+	height: 650px;
 }
 
 #hot-article-list {
@@ -32,9 +32,16 @@ iframe[id="ifm-hot-article"] {
 	width: 100%;
 }
 
-/* sign in */
+
+#newBlogModal {
+	min-width: 50vw;
+}
+
+/* 
+ * sign in 
+ */
 .sign-form {
-	height: 60vh;
+	min-height: 80vh;
 	margin: 50px auto;
 }
 
@@ -44,4 +51,20 @@ iframe[id="ifm-hot-article"] {
 
 .sign-form form .alert-msg {
 	color: red;
+}
+
+/* 
+ * about page
+ */
+#about-page {
+	width: 100%;
+	min-height: 80vh;
+}
+
+/* 
+ * blog edit
+ */
+#blog-edit-page #blog-edit-form div[class="row"],
+#blog-edit-page .operation {
+	margin: 15px 5px;
 }

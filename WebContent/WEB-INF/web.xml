@@ -34,12 +34,20 @@
     <url-pattern>/blogList</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>toBlogMange</servlet-name>
-  	<servlet-class>myservlet.action.ToBlogMangePage</servlet-class>
+    <servlet-name>toBlogMange</servlet-name>
+    <servlet-class>myservlet.action.ToBlogMangePage</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>toBlogMange</servlet-name>
-  	<url-pattern>/blogManage</url-pattern>
+    <servlet-name>toBlogMange</servlet-name>
+    <url-pattern>/blogManage</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>toBlogEdit</servlet-name>
+    <servlet-class>myservlet.action.ToBlogEditPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>toBlogEdit</servlet-name>
+    <url-pattern>/blogEdit</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>searchBlog</servlet-name>
@@ -80,5 +88,21 @@
   <servlet-mapping>
     <servlet-name>signOut</servlet-name>
     <url-pattern>/signout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>newBlog</servlet-name>
+    <servlet-class>myservlet.action.NewBlog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>newBlog</servlet-name>
+    <url-pattern>/newBlog</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>toErrorPage</servlet-name>
+    <servlet-class>myservlet.action.ToErrorPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>toErrorPage</servlet-name>
+    <url-pattern>/error</url-pattern>
   </servlet-mapping>
 </web-app>

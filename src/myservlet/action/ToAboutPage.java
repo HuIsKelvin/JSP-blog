@@ -45,6 +45,8 @@ public class ToAboutPage extends HttpServlet {
 				aInfo.setId(resultSet.getInt("author_id"));
 				aInfo.setName(resultSet.getString("author_name"));
 				aInfo.setEmail(resultSet.getString("author_email"));
+				aInfo.setMotto(resultSet.getString("author_motto"));
+				aInfo.setGithub(resultSet.getString("author_github"));
 			}
 			
 			// ½« author info ´æÔÚ session ÖÐ
