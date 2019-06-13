@@ -11,11 +11,15 @@
 	<!-- Bootstrap Core CSS -->
 	<link href="/BlogSystem/src/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom Fonts -->
-	<link href="/BlogSystem/src/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- <link href="/BlogSystem/src/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+	<link href="/BlogSystem/src/assets/fontawesome/css/all.css" rel="stylesheet" type="text/css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/BlogSystem/src/assets/css/patros.css" >
 	<!-- my css -->
 	<link rel="stylesheet" href="/BlogSystem/src/assets/css/main.css">
+	<!-- squire -->
+	<!-- <script type="text/javascript" href="/BlogSystem/src/assets/squire/squire-raw.js"></script> -->
+	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

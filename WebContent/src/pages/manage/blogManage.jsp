@@ -53,7 +53,7 @@
 		                </div> -->
 		                <div class="col-sm-8 col-md-8">
 		                    <h2 class="blog-title">
-		                        <a href="/BlogSystem/blogEdit?aid=<%= article.getId() %>"><%= article.getTitle() %></a>
+		                        <a href="/BlogSystem/blogShow?aid=<%= article.getId() %>"><%= article.getTitle() %></a>
 		                    </h2>
 		                    <p>
 		                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>

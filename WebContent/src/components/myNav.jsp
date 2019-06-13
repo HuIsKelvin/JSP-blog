@@ -42,7 +42,7 @@
 						if(!login) {
 							// 如果未登录
 					%>
-							<li><a href="/BlogSystem/src/pages/manage/signIn.jsp">登录</a></li>
+							<li><a href="/BlogSystem/src/pages/manage/signIn.jsp">登录 <i class="fa fa-sign-in"></i></a></li>
 							<li><a href="#">注册</a></li>
 					<% 
 						} else {
@@ -60,7 +60,7 @@
 					<%
 		        					} 
 					%>
-					            		<li><a href="/BlogSystem/signout">退出登录</a></li>
+					            		<li><a href="/BlogSystem/signout">退出登录<i class="fa fa-sign-out"></i></a></li>
 					          	</ul>
 					        </li>
 					<%

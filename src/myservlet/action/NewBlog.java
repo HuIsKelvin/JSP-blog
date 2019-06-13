@@ -3,11 +3,9 @@ package myservlet.action;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import myUtil.connector.MysqlQuery;
 import myUtil.connector.MysqlUpdate;
-import mybean.article.Article;
 
 /**
  * Servlet implementation class NewArticle
@@ -77,22 +74,6 @@ public class NewBlog extends HttpServlet {
 					resultSet.first();
 					int aid = resultSet.getInt("article_id");
 					response.sendRedirect("/BlogSystem/blogEdit?aid=" + aid);
-					
-					/*
-					 * Article article = new Article();
-					 * article.setId(resultSet.getInt("article_id"));
-					 * article.setTitle(resultSet.getString("article_title"));
-					 * article.setCategory(resultSet.getString("article_category"));
-					 * article.setDate(resultSet.getString("article_date"));
-					 * article.setDescription(resultSet.getString("article_description"));
-					 * article.setAuthor(resultSet.getString("article_author"));
-					 * article.setContent(resultSet.getString("article_content"));
-					 * 
-					 * // ½« hot article list ´æÔÚ session ÖÐ
-					 * request.getSession().setAttribute("article", article); RequestDispatcher
-					 * dispatcher = request.getRequestDispatcher("/src/pages/manage/blogEdit.jsp");
-					 * dispatcher.forward(request, response);
-					 */
 				}
 				
 			} catch (SQLException e) {

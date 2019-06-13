@@ -41,7 +41,7 @@
     <servlet-name>toBlogMange</servlet-name>
     <url-pattern>/blogManage</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>toBlogEdit</servlet-name>
     <servlet-class>myservlet.action.ToBlogEditPage</servlet-class>
   </servlet>
@@ -56,6 +56,14 @@
   <servlet-mapping>
     <servlet-name>searchBlog</servlet-name>
     <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>editBlog</servlet-name>
+    <servlet-class>myservlet.action.EditBlog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editBlog</servlet-name>
+    <url-pattern>/updateBlog</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>toAboutPage</servlet-name>
