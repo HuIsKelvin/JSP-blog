@@ -9,14 +9,14 @@
 	<title>Kelvin's blog</title>
 	<!-- === 必要的引入文件 === -->
 	<!-- Bootstrap Core CSS -->
-	<link href="/BlogSystem/src/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/src/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom Fonts -->
-	<!-- <link href="/BlogSystem/src/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-	<link href="/BlogSystem/src/assets/fontawesome/css/all.css" rel="stylesheet" type="text/css">
+	<!-- <link href="<%= request.getContextPath() %>/src/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+	<link href="<%= request.getContextPath() %>/src/assets/fontawesome/css/all.css" rel="stylesheet" type="text/css">
 	<!-- Custom CSS -->
-	<link rel="stylesheet" href="/BlogSystem/src/assets/css/patros.css" >
+	<link rel="stylesheet" href="<%= request.getContextPath() %>/src/assets/css/patros.css" >
 	<!-- my css -->
-	<link rel="stylesheet" href="/BlogSystem/src/assets/css/main.css">
+	<link rel="stylesheet" href="<%= request.getContextPath() %>/src/assets/css/main.css">
 	<!-- squire -->
 	<!-- <script type="text/javascript" href="/BlogSystem/src/assets/squire/squire-raw.js"></script> -->
 	

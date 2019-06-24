@@ -44,7 +44,7 @@ public class SearchBlog extends HttpServlet {
 		try {
 			String query = request.getParameter("query");
 			System.out.println("get query: " + query);
-			String sqlString = "select * from articles where article_ifShow=1 AND (article_title LIKE '%" + query + "%' OR article_category LIKE '%" + query + "%');";
+			String sqlString = "select * from articles where article_ifShow=1 AND (article_title LIKE '%" + query + "%' OR article_category LIKE '%" + query + "%' OR article_content LIKE '%" + query + "%');";
 			ResultSet resultSet = (new MysqlQuery()).executeSql(sqlString);
 			ArticleList articleList = new ArticleList();
 			while (resultSet.next()) {

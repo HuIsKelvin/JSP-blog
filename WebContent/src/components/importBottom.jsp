@@ -7,14 +7,14 @@
 	<!-- 如jquery.js -->
 
 	<!-- jQuery -->
-	<script src="/BlogSystem/src/assets/js/jquery.js"></script>
+	<script src="<%= request.getContextPath() %>/src/assets/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="/BlogSystem/src/assets/js/bootstrap.min.js"></script>
+	<script src="<%= request.getContextPath() %>/src/assets/js/bootstrap.min.js"></script>
 	
 	<!-- Portfolio -->
-	<script src="/BlogSystem/src/assets/js/jquery.quicksand.js"></script>
+	<script src="<%= request.getContextPath() %>/src/assets/js/jquery.quicksand.js"></script>
 	
-	<script src="/BlogSystem/src/assets/js/pageOnload.js"></script>
+	<script src="<%= request.getContextPath() %>/src/assets/js/pageOnload.js"></script>
 	
 </head>
 <body>

@@ -41,6 +41,8 @@
 						<!-- blog content -->
 						<div class="blog-content">
 						<%= article.getContent() %>
+						
+						<!-- 
 						<p>This is some dummy copy. You&rsquo;re not really supposed to read this dummy copy, it is just a place holder for people who need some type to visualize what the actual copy might look like if it were real content.</p>
 						</div>
 						<p>If you want to read, I might suggest a good book, perhaps <a title="Hemingway" href="http://en.wikipedia.org/wiki/Ernest_Hemingway">Hemingway</a> or <a title="Melville" href="http://en.wikipedia.org/wiki/Herman_Melville">Melville</a>. That&rsquo;s why they call it, the dummy copy. This, of course, is not the real copy for this entry. Rest assured, the words will expand the concept. With clarity. Conviction. And a little wit.</p>
@@ -53,7 +55,8 @@
 						  <p>For you, the skies will be blue, the birds will sing, and your copy will be crafted by a dedicated little man whose wife will be sitting at home, knitting, wondering why your entry demands more of her husband&lsquo;s time than it should.</p>
 						</blockquote>
 						<p>But you will know why, won&lsquo;t you? You will have given her husband a chance to immortalize himself in print, writing some of the most persuasive prose on behalf of a truly enlightened purveyor of <a title="widgets" href="http://en.wikipedia.org/wiki/Widgets">widgets</a>. And so, while your dedicated reader, enslaved to each mellifluous paragraph, clutches his newspaper with increasing interest and intention to purchase, you can count all your increased profits and take pots of money to your bank. Sadly, this is not the real copy for this entry. <strong>But it could well be</strong>. All you have to do is look at the <a title="account executive" href="http://en.wikipedia.org/wiki/Account_executive">account executive</a> sitting across your desk (the fellow with the lugubrious face and the calf-like eyes), and say &rdquo;Yes! Yes! Yes!&ldquo; And anything you want, body copy, dinners, women, will be yours. Couldn&rsquo;t be fairer than that, could we?</p>
-
+ 						-->
+ 						
 				    </article>
 					<!-- Blog Sidebar Column -->
 					<aside class="col-md-4 sidebar-padding">
@@ -67,7 +70,7 @@
 						<div class="blog-sidebar">
 							<!-- recent article list -->
 							<div class="iframe-container">
-								<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
+								<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="<%= request.getContextPath() %>/showHotArticle"></iframe>
 							</div>
 						</div>
 	

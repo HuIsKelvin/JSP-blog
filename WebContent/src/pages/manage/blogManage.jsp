@@ -3,13 +3,16 @@
     pageEncoding="UTF-8"%>
 <jsp:useBean id="articleList" class="mybean.article.ArticleList" scope="session"></jsp:useBean>
 <% 
+	request.setCharacterEncoding("utf-8");
 	String pageTitle = (String)session.getAttribute("pageTitle"); 
 	if(pageTitle == null || pageTitle.length() == 0) { pageTitle = "我的博客"; }
 %>
 <!DOCTYPE html>
 <html>
 <head>
-
+	<!-- 检查账号权限 -->
+	<%@include file="/src/components/checkAccount.jsp" %>
+	
 	<%@include file="/src/components/importTop.jsp" %>
 	<style type="text/css">
 		#newBlogForm input[type="text"] {
@@ -32,7 +35,7 @@
 	                <%= pageTitle %>
 	            </h1>
 	            
-	            
+	            <!-- 新建博客 -->
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBlogModal" data-whatever="@getbootstrap">新建博客</button>
 	            
 	            <!-- Blog List -->
@@ -47,13 +50,13 @@
 		              <!--   <div class="col-sm-4 col-md-4 ">
 		                    <div class="blog-thumb">
 		                        <a href="#">
-		                            <img class="img-responsive" src="/BlogSystem/src/assets/images/blog-photo1.jpg" alt="photo">
+		                            <img class="img-responsive" src="<%= request.getContextPath() %>/src/assets/images/blog-photo1.jpg" alt="photo">
 		                        </a>
 		                    </div>
 		                </div> -->
 		                <div class="col-sm-8 col-md-8">
 		                    <h2 class="blog-title">
-		                        <a href="/BlogSystem/blogShow?aid=<%= article.getId() %>"><%= article.getTitle() %></a>
+		                        <a href="<%= request.getContextPath() %>/blogShow?aid=<%= article.getId() %>"><%= article.getTitle() %></a>
 		                    </h2>
 		                    <p>
 		                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>
@@ -73,8 +76,8 @@
 		                </div>
 		                <div class="col-sm-4 col-md-4 ">
 		                    <div class="operator pull-right">
-		                    <a href="#" class="btn"><i class="fa fa-trash"></i> 删除</a>
-		                    <a href="/BlogSystem/blogEdit?aid=<%= article.getId() %>" class="btn"><i class="fa fa-pencil"></i> 修改</a>
+		                    <a href="<%= request.getContextPath() %>/blogEdit?aid=<%= article.getId() %>" class="btn btn-plain"><i class="fa fa-edit"></i> 修改</a>
+		                    <a href="<%= request.getContextPath() %>/home" class="btn btn-plain" onclick="return confirm('确定删除？')"><i class="fa fa-trash-alt"></i> 删除</a>
 		                    </div>
 		                </div>
 		            </div>
@@ -94,7 +97,7 @@
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		        <h4 class="modal-title" id="exampleModalLabel">输入新建博客名</h4>
 		      </div>
-		      <form id="newBlogForm" action="/BlogSystem/newBlog" method="post">
+		      <form id="newBlogForm" action="<%= request.getContextPath() %>/newBlog" method="post">
 			      <div class="modal-body">
 			        <label for="article_title" class="control-label">博客名：</label>
 			        <input class="form-control" type="text" id="article-name" name="article_title">

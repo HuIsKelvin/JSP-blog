@@ -8,6 +8,18 @@ public class AuthorInfo {
 	private String emailSub;
 	private String github;
 	
+	public AuthorInfo() {
+		this(0, "", "", "", "", "");
+	}
+	public AuthorInfo(int id, String name, String motto, String email, String emailSub, String github) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.motto = motto;
+		this.email = email;
+		this.emailSub = emailSub;
+		this.github = github;
+	}
 	public int getId() {
 		return id;
 	}

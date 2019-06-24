@@ -25,7 +25,7 @@
 			%>
 	            <div class="media">
 	          		<a class="pull-left" href="#">
-	                    <img class="img-responsive media-object" src="/BlogSystem/src/assets/images/blog1.jpg" alt="Media Object">
+	                    <img class="img-responsive media-object" src="<%= request.getContextPath() %>/src/assets/images/blog1.jpg" alt="Media Object">
 	                </a>
 	                <div class="media-body">
 	                    <h4 class="media-heading"><a href="#"><%= article.getTitle() %></a></h4>

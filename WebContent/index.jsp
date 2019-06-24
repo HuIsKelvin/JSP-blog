@@ -9,6 +9,6 @@
 <title>Kelvin's blog</title>
 </head>
 <body>
-	<jsp:forward page="./src/pages/home.jsp"></jsp:forward>
+	<jsp:forward page="blogList"></jsp:forward>
 </body>
 </html>

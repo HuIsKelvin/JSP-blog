@@ -5,11 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<!-- 检查账号权限 -->
+	<%@include file="/src/components/checkAccount.jsp" %>
+	
 	<%@include file="/src/components/importTop.jsp" %>
 	
-	<link rel="stylesheet" href="/BlogSystem/src/assets/css/editor.css">
-	<script src="/BlogSystem/src/assets/squire/squire-raw.js"></script>
+	<link rel="stylesheet" href="<%= request.getContextPath() %>/src/assets/css/editor.css">
+	<script src="<%= request.getContextPath() %>/src/assets/squire/squire-raw.js"></script>
 	<style type="text/css">
 		#blog-edit-form input,
 		#blog-edit-form textarea {
@@ -31,7 +33,7 @@
             	<!-- page title -->
                	博客编辑
             </h1>
-			<form id="blog-edit-form" name="blogEdit" action="/BlogSystem/updateBlog" method="post" onsubmit="return submitBlogEdit()">
+			<form id="blog-edit-form" name="blogEdit" action="<%= request.getContextPath() %>/updateBlog" method="post" onsubmit="return submitBlogEdit()">
 				<input type="hidden" type="text" name="article_id" value="<%= article.getId() %>">
 				<div class="row">
 					<label for="article_title" class="control-label">标题</label>
@@ -51,14 +53,14 @@
 				</div>
 				<div class="row">
 					<label for="article_content" class="control-label">内容</label>
-					<input id="article_content" type="text" name="article_content">
-					<textarea class="form-control" name="content" rows="10"><%= article.getContent() %></textarea>
+					<input id="article_content" type="hidden" name="article_content">
+					<%-- <textarea class="form-control" name="content" rows="10"><%= article.getContent() %></textarea> --%>
 				</div>
 				
 				<!-- squire -->
-				<div id="squire-pane" class="row">
+				<div id="squire-pane">
 					<!-- format operator -->
-					<div id="squire-operator" class="row">
+					<div id="squire-operator">
 				        <div class="row">
 				        	<!-- bold -->
 				            <span id="bold"><i class="fa fa-bold"></i></span>
@@ -81,9 +83,6 @@
 				        </div>
 				        
 				        <div class="row">
-				        </div>
-				        
-				        <div class="row">
 				        	<!-- Make Header -->
 				            <span id="makeHeader"><i class="fa fa-heading"></i></span>
 				            <!-- quote -->
@@ -102,6 +101,9 @@
 				            <span id="insertImage" class="prompt"><i class="fa fa-image"></i></span>
 				            <!-- Link -->
 				            <span id="makeLink" class="prompt"><i class="fa fa-link"></i></span>
+				        </div>
+				        
+				        <div class="row">
 				            <!-- undo -->
 				            <span id="undo"><i class="fa fa-undo"></i></span>
 				            <!-- redo -->
@@ -112,11 +114,15 @@
 					
 					<div id="content-editor"></div>
 				</div>
-				<input type="submit" class="from-control" value="完成编辑（demo）">
+				<div class="row text-center">
+					<br/>
+					<button type="submit" class="btn btn-primary">完成编辑</button>
+					<br/>
+				</div>
 			</form>
-			<div class="operation row text-center">
+			<!-- <div class="operation row text-center">
 				<button type="button" class="btn btn-primary">完成编辑</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	

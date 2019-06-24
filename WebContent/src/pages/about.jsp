@@ -31,7 +31,7 @@
 						</div>
 						<p><i class="fa fa-star"></i> <%= authorInfo.getMotto() %></p>
 						<p><i class="fa fa-envelope"></i> <%= authorInfo.getEmail() %></p>
-						<p><i class="fa fa-github"></i> <a href="<%= authorInfo.getGithub() %>"><%= authorInfo.getGithub() %></a></p>
+						<p>GitHub: <a href="<%= authorInfo.getGithub() %>"><%= authorInfo.getGithub() %></a></p>
 					</div>
 					
 			        <!-- side bar -->
@@ -43,7 +43,7 @@
 						
 						<!-- recent article list -->
 						<div class="iframe-container">
-							<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
+							<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="<%= request.getContextPath() %>/showHotArticle"></iframe>
 						</div>
 					</div>
 					

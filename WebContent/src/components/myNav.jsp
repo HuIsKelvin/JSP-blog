@@ -30,20 +30,22 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">
-					<img src="/BlogSystem/src/assets/images/logo.png" alt="company logo" />
+					<img src="<%= request.getContextPath() %>/src/assets/images/logo.png" alt="company logo" />
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right custom-menu">
-					<li><a href="/BlogSystem/src/pages/home.jsp">Home</a></li>
-					<li><a href="/BlogSystem/about">About</a></li>
-					<li><a href="/BlogSystem/blogList">Blog</a></li>
+					<%-- <li><a href="<%= request.getContextPath() %>/home">Home</a></li> --%>
+					<li><a href="<%= request.getContextPath() %>/blogList">Blog</a></li>
+					<li><a href="<%= request.getContextPath() %>/about">About</a></li>
 					<%
 						if(!login) {
 							// 如果未登录
 					%>
-							<li><a href="/BlogSystem/src/pages/manage/signIn.jsp">登录 <i class="fa fa-sign-in"></i></a></li>
-							<li><a href="#">注册</a></li>
+							<!-- 登录 -->
+							<li><a href="<%= request.getContextPath() %>/src/pages/manage/signIn.jsp">登录 <i class="fa fa-sign-in"></i></a></li>
+							<!-- 注册 -->
+							<!-- <li><a href="#">注册</a></li> -->
 					<% 
 						} else {
 					%>
@@ -54,13 +56,13 @@
 		        					if(account.isAdmin()) {
 		        						// 如果是博主的账号
 		        	%>
-						        		<li><a href="/BlogSystem/blogManage">我的博客</a></li>
-						            	<li><a href="#">个人信息</a></li>
+						        		<li><a href="blogManage">我的博客</a></li>
+						            	<li><a href="editAuthor">个人信息</a></li>
 						            	<li role="separator" class="divider"></li>
 					<%
 		        					} 
 					%>
-					            		<li><a href="/BlogSystem/signout">退出登录<i class="fa fa-sign-out"></i></a></li>
+					            		<li><a href="signout">退出登录<i class="fa fa-sign-out"></i></a></li>
 					          	</ul>
 					        </li>
 					<%

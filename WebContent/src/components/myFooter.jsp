@@ -16,7 +16,7 @@
 				<div class="col-sm-6">
 					<div class="pull-right">
 						Designed by 
-						<a href="#about">Kelvin</a>
+						<a href="<%= request.getContextPath() %>/about">Kelvin</a>
 					</div>
 				</div>
 			</div>

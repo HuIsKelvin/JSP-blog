@@ -35,7 +35,7 @@
 	<div class="page-container">
 		<div class="container blog">
 			<div class="sign-form">
-				<form class="input-group searchbar" action="/BlogSystem/signin" method="post" name="login">
+				<form class="input-group searchbar" action="<%= request.getContextPath() %>/signin" method="post" name="login">
 					<%if(alertMsg != null) { out.print("<p style='color: red;'>" + alertMsg + "</p>"); } %>
 					<p>用户名：<input type="text" class="form-control" name="username"></p>
 					<br/>

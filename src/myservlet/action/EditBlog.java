@@ -44,10 +44,10 @@ public class EditBlog extends HttpServlet {
 		
 		boolean flag = (new MysqlUpdate()).executeSql(sqlString);
 		if(flag) {
-			response.sendRedirect("/BlogSystem/blogManage");
+			response.sendRedirect(request.getContextPath() + "/blogManage");
 		} else {
 			request.getSession().setAttribute("message", "更新博客过程中出现错误！");
-			response.sendRedirect("/BlogSystem/error");
+			response.sendRedirect(request.getContextPath()+"/error");
 		}
 	}
 

@@ -244,6 +244,8 @@ img.displayed{display: block;margin-left: auto;margin-right: auto;background-col
 .comments1 .media-object { max-width: 60px; }
 .btn-primary { background-color: #E96840;  border:none; }
 .btn-primary:hover { background-color: #2D2D2D;-webkit-transition:0.5s; transition: 0.5s; transition-timing-function: ease; }
+.btn-plain { border: 1px solid #E96840 };
+.btn-plain:hover { background-color: #E96840; color:#000; -webkit-transition:0.5s; transition: 0.5s; transition-timing-function: ease;}
 @media only screen and (min-width:768px) and (max-width: 980px) { 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
  font-size:14px; } .navbar-inverse .navbar-nav>li>a { font-size:13px; margin-right:3px; padding-left:0px; } }

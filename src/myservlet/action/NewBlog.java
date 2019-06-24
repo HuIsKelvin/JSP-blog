@@ -42,12 +42,13 @@ public class NewBlog extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String article_title = request.getParameter("article_title");
-		
+				
 		if(article_title == null || article_title.length() == 0) {
 			// 转到 error页面
 			request.getSession().setAttribute("message", "请输入正确的博客名！");
-			response.sendRedirect("/BlogSystem/error");
+			response.sendRedirect(request.getContextPath() + "/error");
 		} else {
 			try {
 				String sqlString;
@@ -64,7 +65,7 @@ public class NewBlog extends HttpServlet {
 					// 若插入不成功
 					// 转到 error页面
 					request.getSession().setAttribute("message", "新建博客失败！");
-					response.sendRedirect("/BlogSystem/error");
+					response.sendRedirect(request.getContextPath() + "/error");
 				} else {
 					// 插入成功
 					// sqlString = "select * from articles where article_id=" + aid + ";";
@@ -73,7 +74,7 @@ public class NewBlog extends HttpServlet {
 					// 读取 article 信息
 					resultSet.first();
 					int aid = resultSet.getInt("article_id");
-					response.sendRedirect("/BlogSystem/blogEdit?aid=" + aid);
+					response.sendRedirect(request.getContextPath() + "/blogEdit?aid=" + aid);
 				}
 				
 			} catch (SQLException e) {

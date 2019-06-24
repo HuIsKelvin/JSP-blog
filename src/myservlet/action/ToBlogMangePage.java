@@ -43,7 +43,7 @@ public class ToBlogMangePage extends HttpServlet {
 		if(request.getSession().getAttribute("account") == null) {
 			// Èç¹ûÎ´µÇÂ¼
 			response.sendRedirect("./src/pages/manage/signIn.jsp");
-			// response.sendRedirect("/BlogSystem/signin");
+			// response.sendRedirect(request.getContextPath() + "/signin");
 		} else {
 			try {
 				String sqlString = "select * from articles where article_ifShow=1 ORDER BY article_date DESC";

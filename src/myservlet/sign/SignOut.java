@@ -38,7 +38,8 @@ public class SignOut extends HttpServlet {
 		}
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("/src/pages/home.jsp");
 //		dispatcher.forward(request, response);
-		response.sendRedirect("./src/pages/home.jsp");
+		// response.sendRedirect("./src/pages/home.jsp");
+		response.sendRedirect(request.getContextPath() + "/home");
 	}
 
 	/**

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<!-- search bar -->
-	<form class="input-group searchbar" action="/BlogSystem/search" method="post">
+	<form class="input-group searchbar" action="<%= request.getContextPath() %>/search" method="post">
 		<input type="text" id="searchbar-test" class="form-control searchbar" name="query" placeholder="Search for...">
 		<span class="input-group-btn">
 			<button class="btn btn-default" type="submit">Search</button>

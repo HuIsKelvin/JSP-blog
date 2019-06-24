@@ -1,4 +1,4 @@
-package myservlet.control;
+package myservlet.action;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PostMan
+ * Servlet implementation class ToHomePage
  */
-@WebServlet("/PostMan")
-public class PostMan extends HttpServlet {
+@WebServlet("/ToHomePage")
+public class ToHomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PostMan() {
+    public ToHomePage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,15 +28,8 @@ public class PostMan extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("this is post man");
-		String name = request.getParameter("name");
-		System.out.println("input: "+name);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/experiment0530/showName.jsp");
-		if (name != null && name.length() >= 1) {
-			dispatcher.forward(request, response);
-		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/src/pages/home.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

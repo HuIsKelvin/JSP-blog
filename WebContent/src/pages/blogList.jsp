@@ -41,14 +41,14 @@
 			            <div class="row single-blog">
 			                <div class="col-sm-4 col-md-4 ">
 			                    <div class="blog-thumb">
-			                        <a href="/BlogSystem/blogShow?aid=<%=article.getId() %>">
-			                            <img class="img-responsive" src="/BlogSystem/src/assets/images/blog-photo1.jpg" alt="photo">
+			                        <a href="<%= request.getContextPath() %>/blogShow?aid=<%=article.getId() %>">
+			                            <img class="img-responsive" src="<%= request.getContextPath() %>/src/assets/images/blog-photo1.jpg" alt="photo">
 			                        </a>
 			                    </div>
 			                </div>
 			                <div class="col-sm-8 col-md-8">
 			                    <h2 class="blog-title">
-			                        <a href="/BlogSystem/blogShow?aid=<%=article.getId() %>"><%= article.getTitle() %></a>
+			                        <a href="<%= request.getContextPath() %>/blogShow?aid=<%=article.getId() %>"><%= article.getTitle() %></a>
 			                    </h2>
 			                    <p>
 			                    	<i class="fa fa-calendar-o"></i> <%= article.getDate() %>
@@ -95,7 +95,7 @@
 					
 					<!-- recent article list -->
 					<div class="iframe-container">
-						<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="/BlogSystem/showHotArticle"></iframe>
+						<iframe id="ifm-hot-article" class="embed-responsive-item iframe" src="<%= request.getContextPath() %>/showHotArticle"></iframe>
 					</div>
 				</div>
 			</div>

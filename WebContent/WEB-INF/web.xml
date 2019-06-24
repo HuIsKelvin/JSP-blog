@@ -18,6 +18,14 @@
     <url-pattern>/postman</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>toHomePage</servlet-name>
+    <servlet-class>myservlet.action.ToHomePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>toHomePage</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>toBlogShow</servlet-name>
     <servlet-class>myservlet.action.ToBlogShowPage</servlet-class>
   </servlet>
@@ -57,7 +65,7 @@
     <servlet-name>searchBlog</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>editBlog</servlet-name>
     <servlet-class>myservlet.action.EditBlog</servlet-class>
   </servlet>
@@ -104,6 +112,22 @@
   <servlet-mapping>
     <servlet-name>newBlog</servlet-name>
     <url-pattern>/newBlog</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>editAuthorInfo</servlet-name>
+    <servlet-class>myservlet.action.ToAuthorEditPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editAuthorInfo</servlet-name>
+    <url-pattern>/editAuthor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateAuthorInfo</servlet-name>
+    <servlet-class>myservlet.action.UpdateAuthorInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateAuthorInfo</servlet-name>
+    <url-pattern>/updateAuthor</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>toErrorPage</servlet-name>

@@ -1,8 +1,5 @@
 package myservlet.action;
 
-import myUtil.connector.*;
-import mybean.article.*;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,40 +11,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import myUtil.connector.MysqlQuery;
+import mybean.author.AuthorInfo;
+
 /**
- * Servlet implementation class showHotArticleList
+ * Servlet implementation class ToAuthorEditPage
  */
-@WebServlet("/showHotArticleList")
-public class showHotArticleList extends HttpServlet {
+@WebServlet("/ToAuthorEditPage")
+public class ToAuthorEditPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public showHotArticleList() {
+    public ToAuthorEditPage() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		try {
-			String sqlString = "select article_id id, article_title title, article_date date , article_description description from articles ORDER BY date DESC LIMIT 5;";
+			AuthorInfo author = new AuthorInfo();
+			String sqlString = "select * from author_info;";
 			ResultSet resultSet = (new MysqlQuery()).executeSql(sqlString);
-			HotArticleList hotArticleList = new HotArticleList();
-			while (resultSet.next()) {
-				int id = resultSet.getInt("id");
-				String title = resultSet.getString("title");
-				Article article = new Article(id, title);
-				article.setDescription(resultSet.getString("description"));
-				hotArticleList.add(article);
-			}
-			System.out.println("num of recent blog: " + hotArticleList.getArticleNum());
-			// 将 hot article list 存在 session 中
-		    request.getSession().setAttribute("hotArticleList", hotArticleList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/components/hotArticleList.jsp");
+			
+			// 读取 author 信息
+			resultSet.first();
+			author.setId(resultSet.getInt("author_id"));
+			author.setName(resultSet.getString("author_name"));
+			author.setMotto(resultSet.getString("author_motto"));
+			author.setEmail(resultSet.getString("author_email"));
+			author.setEmailSub(resultSet.getString("author_email_sub"));
+			author.setGithub(resultSet.getString("author_github"));
+			
+			// 将 author 存在 session 中
+		    request.getSession().setAttribute("authorInfo", author);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/pages/manage/authorEdit.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,6 +60,7 @@ public class showHotArticleList extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

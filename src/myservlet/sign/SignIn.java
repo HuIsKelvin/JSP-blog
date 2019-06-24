@@ -43,6 +43,8 @@ public class SignIn extends HttpServlet {
 		try {
 			String username = request.getParameter("username");
 			String pwd = request.getParameter("password");
+			int degree = 0;
+			
 			if(request.getSession().getAttribute("alertMsg") != null) {
 				request.getSession().removeAttribute("alertMsg");
 			};
@@ -56,11 +58,20 @@ public class SignIn extends HttpServlet {
 			if(resultSet.isBeforeFirst()) {
 				// 读取 article 信息
 				resultSet.first();
+				username = resultSet.getString("account_name");
+				degree = resultSet.getInt("account_degree");
+				
 				Account account = new Account();
-				account.setUsername(resultSet.getString("account_name"));
-				account.setDegree(resultSet.getInt("account_degree"));
+				account.setUsername(username);
+				account.setDegree(degree);
 				request.getSession().setAttribute("account", account);
-				response.sendRedirect("./src/pages/home.jsp");
+				
+				if (degree == 1) {
+					response.sendRedirect("./src/pages/home.jsp");
+				} else if(degree == 2) {
+					response.sendRedirect("/BlogSystem/blogManage");
+				}
+				// response.sendRedirect("./src/pages/home.jsp");
 			} else {
 				// 若结果集无数据
 				request.getSession().setAttribute("alertMsg", "用户名或密码错误！");
