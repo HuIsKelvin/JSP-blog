@@ -40,7 +40,7 @@ public class EditBlog extends HttpServlet {
 		String updateString = "SET article_title='" + title + "', article_category='" + category + "', article_author='" + author + "', article_description='" + description + "', article_content='" + content + "'";
 		String conditionString = "WHERE article_id=" + id;
 		sqlString = sqlString + " " + updateString + " " + conditionString;
-		System.out.println(sqlString);
+		// System.out.println(sqlString);
 		
 		boolean flag = (new MysqlUpdate()).executeSql(sqlString);
 		if(flag) {

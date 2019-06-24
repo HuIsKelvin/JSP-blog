@@ -4,6 +4,13 @@
 	box-sizing: border-box;
 }
 
+ul,
+ol,
+li {
+	color: #9d9d9d;
+	padding: 12px 0;
+}
+
 /* 
  * page contatiner
  */
@@ -67,4 +74,23 @@ iframe[id="ifm-hot-article"] {
 #blog-edit-page #blog-edit-form div[class="row"],
 #blog-edit-page .operation {
 	margin: 15px 5px;
+}
+
+/* 
+ * squire editor
+ */
+#content-editor UL,
+.blog-content UL,
+#content-editor OL,
+.blog-content OL {
+	list-style-type: circle;
+	color: #9d9d9d;
+}
+
+#content-editor UL listItem,
+#content-editor OL listItem,,
+.blog-content UL listItem,
+.blog-content OL listItem {
+	padding: 12px auto;
+	padding-left: 20px;
 }

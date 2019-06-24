@@ -72,7 +72,9 @@
 		                    <% 
 		                    	} 
 	                    	%>
+	                    	<!--
 		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+		                	 -->
 		                </div>
 		                <div class="col-sm-4 col-md-4 ">
 		                    <div class="operator pull-right">

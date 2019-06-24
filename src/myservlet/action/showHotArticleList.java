@@ -44,7 +44,7 @@ public class showHotArticleList extends HttpServlet {
 				article.setDescription(resultSet.getString("description"));
 				hotArticleList.add(article);
 			}
-			System.out.println("num of recent blog: " + hotArticleList.getArticleNum());
+			// System.out.println("num of recent blog: " + hotArticleList.getArticleNum());
 			// ½« hot article list ´æÔÚ session ÖÐ
 		    request.getSession().setAttribute("hotArticleList", hotArticleList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/src/components/hotArticleList.jsp");
