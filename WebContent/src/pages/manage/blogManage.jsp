@@ -77,7 +77,7 @@
 		                <div class="col-sm-4 col-md-4 ">
 		                    <div class="operator pull-right">
 		                    <a href="<%= request.getContextPath() %>/blogEdit?aid=<%= article.getId() %>" class="btn btn-plain"><i class="fa fa-edit"></i> 修改</a>
-		                    <a href="<%= request.getContextPath() %>/home" class="btn btn-plain" onclick="return confirm('确定删除？')"><i class="fa fa-trash-alt"></i> 删除</a>
+		                    <a href="<%= request.getContextPath() %>/deleteBlog?aid=<%= article.getId() %>" class="btn btn-plain" onclick="return confirm('确定删除？')"><i class="fa fa-trash-alt"></i> 删除</a>
 		                    </div>
 		                </div>
 		            </div>

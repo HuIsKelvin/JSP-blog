@@ -114,6 +114,14 @@
     <url-pattern>/newBlog</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>deleteBlog</servlet-name>
+    <servlet-class>myservlet.action.DeleteBlog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteBlog</servlet-name>
+    <url-pattern>/deleteBlog</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>editAuthorInfo</servlet-name>
     <servlet-class>myservlet.action.ToAuthorEditPage</servlet-class>
   </servlet>
